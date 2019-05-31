@@ -93,7 +93,7 @@ def fetch_url(url, useragent, referer=None, retries=1, dimension=False):
     response = None
     while True:
         try:
-            response = requests.get(url, stream=True, timeout=5, headers={
+            response = requests.get(url, stream=True, timeout=5, verify=False, headers={
                 'User-Agent': useragent,
                 'Referer': referer,
             })
